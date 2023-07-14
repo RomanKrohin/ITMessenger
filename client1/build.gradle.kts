@@ -17,7 +17,7 @@ repositories {
 dependencies {
     testImplementation(kotlin("test"))
     implementation("org.springframework:spring-context:5.2.21.RELEASE")
-    implementation("org.springframework:spring-webmvc:5.2.3.RELEASE")
+    implementation("org.springframework:spring-webmvc:6.0.9")
     implementation("org.springframework:spring-jdbc:5.2.3.RELEASE")
     implementation("org.springframework.kafka:spring-kafka:3.0.0")
     implementation("org.springframework.boot:spring-boot-starter:3.1.1")

@@ -1,20 +1,16 @@
 package utils
 
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.kafka.core.KafkaTemplate
-import org.springframework.web.bind.annotation.PostMapping
-import org.springframework.web.bind.annotation.RequestBody
+import org.springframework.stereotype.Component
 
+@Component("messageController")
+class MessageController() {
 
-class MessageController(workKafkaTemplate: KafkaTemplate<String, String>) {
+    @Autowired
+    lateinit var kafkaTemplate: KafkaTemplate<String, String>
 
-    val kafkaTemplate: KafkaTemplate<String, String>
-
-    init {
-        kafkaTemplate=workKafkaTemplate
-    }
-
-    @PostMapping("/messages")
-    fun sendMessage(@RequestBody message:String){
+    fun sendMessage(message: String){
         kafkaTemplate.send("123", message)
     }
 }
